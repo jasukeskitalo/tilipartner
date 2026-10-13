@@ -76,10 +76,10 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
-        .logo span {
+        .logo span.accent {
             color: var(--accent);
         }
 
@@ -424,18 +424,19 @@
         <div class="container">
             <nav class="navbar">
                 <a href="#" class="logo">
-                    <i class="fa-solid fa-calculator"></i> Tili<span>Partner</span>
+                    <i class="fa-solid fa-calculator"></i>
+                    <span>Tili<span class="accent">Partner</span></span>
                 </a>
                 <ul class="nav-links">
                     <li><a href="#miksi-me">Miksi me?</a></li>
                     <li><a href="#palvelut">Palvelut</a></li>
                     <li><a href="#yhteystiedot">Yhteystiedot</a></li>
+                    <li><a href="#yhteystiedot" class="btn btn-primary">Ota yhteyttä</a></li>
                     <li>
                         <a href="tel:+358407311994" class="phone-nav-link">
                             <i class="fa-solid fa-phone"></i> +358 40 731 1994
                         </a>
                     </li>
-                    <li><a href="#yhteystiedot" class="btn btn-primary">Ota yhteyttä</a></li>
                 </ul>
             </nav>
         </div>
