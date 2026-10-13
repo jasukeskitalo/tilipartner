@@ -299,92 +299,80 @@
             font-size: 1.1rem;
         }
 
-        /* Contact Section */
+        /* Contact Section (Karsittu ja keskitetty versio) */
         .contact {
             padding: 90px 0;
             background-color: var(--bg-white);
+            text-align: center;
         }
 
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .contact-info h2 {
+        .contact-content h2 {
             font-size: 2.25rem;
             color: var(--primary);
             margin-bottom: 16px;
         }
 
-        .contact-info p {
+        .contact-content p.subtitle {
             color: var(--text-muted);
-            margin-bottom: 32px;
+            margin-bottom: 48px;
+            font-size: 1.1rem;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
         }
 
         .info-item {
             display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            margin-bottom: 24px;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 400px;
+            background-color: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+            transition: transform 0.2s ease;
+        }
+
+        .info-item:hover {
+            transform: scale(1.02);
         }
 
         .info-item i {
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             background-color: var(--accent-light);
             color: var(--accent);
-            border-radius: 8px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1.25rem;
+            flex-shrink: 0;
         }
 
-        .info-item h4 {
+        .info-item-text h4 {
             color: var(--primary);
-            font-size: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             margin-bottom: 4px;
         }
 
-        .info-item p {
-            margin-bottom: 0;
-        }
-
-        .contact-form {
-            background-color: var(--bg-light);
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
+        .info-item-text p {
+            color: var(--text-dark);
+            font-size: 1.1rem;
             font-weight: 500;
-            color: var(--primary);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 1rem;
-            background-color: white;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
         }
 
         /* Footer */
@@ -411,10 +399,6 @@
                 font-size: 2.25rem;
             }
 
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
-
             .hero-buttons {
                 flex-direction: column;
             }
@@ -434,164 +418,4 @@
                     <li><a href="#miksi-me">Miksi me?</a></li>
                     <li><a href="#palvelut">Palvelut</a></li>
                     <li><a href="#yhteystiedot">Yhteystiedot</a></li>
-                    <li><a href="#yhteystiedot" class="btn btn-primary">Pyydä tarjous</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero-osio -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-badge">
-                <i class="fa-solid fa-check"></i> Yli 10 vuoden kokemus
-            </div>
-            <h1>Nykyaikaista ja täysin digitaalista kirjanpitoa Suomessa</h1>
-            <p>Yli 10 vuoden kokemuksella tarjoamme paperittomat ja vaivattomat taloushallinnon palvelut yrityksellesi.</p>
-            <div class="hero-buttons">
-                <a href="#yhteystiedot" class="btn btn-primary">Pyydä tarjous</a>
-                <a href="#palvelut" class="btn btn-secondary">Tutustu palveluihin</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Miksi valita meidät? -->
-    <section id="miksi-me" class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2>Miksi valita meidät?</h2>
-                <p>Nykyaikainen tilitoimisto, joka helpottaa yrityksesi arkea.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-leaf"></i>
-                    </div>
-                    <h3>100 % Digitaalinen ja paperiton</h3>
-                    <p>Säästä aikaa ja vaivaa. Kaikki kuitit, laskut ja raportit hoituvat sähköisesti missä ja milloin vain.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-award"></i>
-                    </div>
-                    <h3>Yli 10 vuoden kokemus</h3>
-                    <p>Luotettavaa ja ammattitaitoista palvelua, johon voit nojata vankasti yrityksesi arjessa ja kasvussa.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-laptop-code"></i>
-                    </div>
-                    <h3>Nykyaikaiset työkalut (Fennoa)</h3>
-                    <p>Käytössämme on helppokäyttöinen ja tehokas Fennoa-taloushallinto-ohjelmisto, joka tekee yhteistyöstä sujuvaa.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fennoa Banneri -->
-    <section class="software-banner">
-        <div class="container">
-            <div class="software-content">
-                <h2>Tehokkuutta Fennoa-ohjelmistolla</h2>
-                <p>Käytämme alan moderneinta Fennoa-ohjelmistoa, jonka avulla automatisoimme rutiinit ja pidämme yrityksesi taloustiedot aina ajan tasalla.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Palvelumme -->
-    <section id="palvelut" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Palvelumme</h2>
-                <p>Kattavat taloushallinnon palvelut räätälöitynä yrityksesi tarpeisiin.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fa-solid fa-book-open"></i>
-                    <h3>Kirjanpito</h3>
-                    <p>Ajantasainen ja huolellinen kirjanpito kaikenkokoisille yrityksille asiantuntevasti toteutettuna.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-users"></i>
-                    <h3>Palkanlaskenta</h3>
-                    <p>Tarkka ja luotettava palkanlaskenta aina ajallaan ja viranomaisvaatimukset täyttäen.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-file-invoice-dollar"></i>
-                    <h3>Tilinpäätökset & Veroilmoitukset</h3>
-                    <p>Vuositilinpäätökset, veroilmoitukset ja viranomaisraportointi rautaisella ammattitaidolla.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <h3>Muut taloushallinnon palvelut</h3>
-                    <p>Laskutus, myynti- ja ostoreskontran hoito sekä asiantunteva neuvonta talouden kysymyksissä.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Yhteystiedot ja Tarjouspyyntö -->
-    <section id="yhteystiedot" class="contact">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h2>Ota yhteyttä ja pyydä tarjous</h2>
-                    <p>Jätä meille viesti tai tarjouspyyntö, niin palaamme asiaan mahdollisimman pian!</p>
-                    
-                    <div class="info-item">
-                        <i class="fa-solid fa-envelope"></i>
-                        <div>
-                            <h4>Sähköposti</h4>
-                            <p>info@tilipartner.fi</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fa-solid fa-phone"></i>
-                        <div>
-                            <h4>Puhelinnumero</h4>
-                            <p>+358 40 123 4567</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <h4>Osoite</h4>
-                            <p>Helsinki, Suomi</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form">
-                    <form onsubmit="alert('Kiitos viestistäsi! Palaamme asiaan pian.'); return false;">
-                        <div class="form-group">
-                            <label for="name">Nimi</label>
-                            <input type="text" id="name" required placeholder="Etunimi Sukunimi">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Sähköposti</label>
-                            <input type="email" id="email" required placeholder="nimi@yritys.fi">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Puhelinnumero</label>
-                            <input type="tel" id="phone" placeholder="040 123 4567">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Viesti / Tarjouspyyntö</label>
-                            <textarea id="message" rows="4" required placeholder="Kerro lyhyesti yrityksestäsi ja tarpeistasi..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Lähetä viesti</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 TiliPartner. Kaikki oikeudet pidätetään. Digitaalista kirjanpitoa Suomessa.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                    <li><a href="#yhteystiedot" class="btn btn-primary">
