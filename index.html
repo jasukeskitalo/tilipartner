@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiliPartner | Nykyaikaista ja täysin digitaalista kirjanpitoa Suomessa</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Font Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0F172A;
+            --primary-light: #1E293B;
+            --accent: #0D9488;
+            --accent-hover: #0F766E;
+            --accent-light: #CCFBF1;
+            --text-dark: #0F172A;
+            --text-muted: #64748B;
+            --bg-light: #F8FAFC;
+            --bg-white: #FFFFFF;
+            --border-color: #E2E8F0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: var(--bg-light);
+            color: var(--primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #E2E8F0;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 80px 0;
+            background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 100%);
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--accent-light);
+            color: var(--accent-hover);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 3.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 36px auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 90px 0;
+            background-color: var(--bg-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 32px;
+            border-radius: 12px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background-color: var(--accent-light);
+            color: var(--accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 90px 0;
+            background-color: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .service-card i {
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Software Banner */
+        .software-banner {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .software-content h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .software-content p {
+            color: #94A3B8;
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 90px 0;
+            background-color: var(--bg-white);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .info-item i {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-light);
+            color: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .info-item h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .info-item p {
+            margin-bottom: 0;
+        }
+
+        .contact-form {
+            background-color: var(--bg-light);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            background-color: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-light);
+            color: #94A3B8;
+            padding: 40px 0;
+            border-top: 1px solid #334155;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                justify-content: center;
+                gap: 12px;
+                height: auto;
+                padding: 16px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigaatio -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-calculator"></i> Tili<span>Partner</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#miksi-me">Miksi me?</a></li>
+                    <li><a href="#palvelut">Palvelut</a></li>
+                    <li><a href="#yhteystiedot">Yhteystiedot</a></li>
+                    <li><a href="#yhteystiedot" class="btn btn-primary">Pyydä tarjous</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero-osio -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <i class="fa-solid fa-check"></i> Yli 10 vuoden kokemus
+            </div>
+            <h1>Nykyaikaista ja täysin digitaalista kirjanpitoa Suomessa</h1>
+            <p>Yli 10 vuoden kokemuksella tarjoamme paperittomat ja vaivattomat taloushallinnon palvelut yrityksellesi.</p>
+            <div class="hero-buttons">
+                <a href="#yhteystiedot" class="btn btn-primary">Pyydä tarjous</a>
+                <a href="#palvelut" class="btn btn-secondary">Tutustu palveluihin</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Miksi valita meidät? -->
+    <section id="miksi-me" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Miksi valita meidät?</h2>
+                <p>Nykyaikainen tilitoimisto, joka helpottaa yrityksesi arkea.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3>100 % Digitaalinen ja paperiton</h3>
+                    <p>Säästä aikaa ja vaivaa. Kaikki kuitit, laskut ja raportit hoituvat sähköisesti missä ja milloin vain.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3>Yli 10 vuoden kokemus</h3>
+                    <p>Luotettavaa ja ammattitaitoista palvelua, johon voit nojata vankasti yrityksesi arjessa ja kasvussa.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3>Nykyaikaiset työkalut (Fennoa)</h3>
+                    <p>Käytössämme on helppokäyttöinen ja tehokas Fennoa-taloushallinto-ohjelmisto, joka tekee yhteistyöstä sujuvaa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fennoa Banneri -->
+    <section class="software-banner">
+        <div class="container">
+            <div class="software-content">
+                <h2>Tehokkuutta Fennoa-ohjelmistolla</h2>
+                <p>Käytämme alan moderneinta Fennoa-ohjelmistoa, jonka avulla automatisoimme rutiinit ja pidämme yrityksesi taloustiedot aina ajan tasalla.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Palvelumme -->
+    <section id="palvelut" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Palvelumme</h2>
+                <p>Kattavat taloushallinnon palvelut räätälöitynä yrityksesi tarpeisiin.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3>Kirjanpito</h3>
+                    <p>Ajantasainen ja huolellinen kirjanpito kaikenkokoisille yrityksille asiantuntevasti toteutettuna.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-users"></i>
+                    <h3>Palkanlaskenta</h3>
+                    <p>Tarkka ja luotettava palkanlaskenta aina ajallaan ja viranomaisvaatimukset täyttäen.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <h3>Tilinpäätökset & Veroilmoitukset</h3>
+                    <p>Vuositilinpäätökset, veroilmoitukset ja viranomaisraportointi rautaisella ammattitaidolla.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Muut taloushallinnon palvelut</h3>
+                    <p>Laskutus, myynti- ja ostoreskontran hoito sekä asiantunteva neuvonta talouden kysymyksissä.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yhteystiedot ja Tarjouspyyntö -->
+    <section id="yhteystiedot" class="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Ota yhteyttä ja pyydä tarjous</h2>
+                    <p>Jätä meille viesti tai tarjouspyyntö, niin palaamme asiaan mahdollisimman pian!</p>
+                    
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>Sähköposti</h4>
+                            <p>info@tilipartner.fi</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Puhelinnumero</h4>
+                            <p>+358 40 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Osoite</h4>
+                            <p>Helsinki, Suomi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form onsubmit="alert('Kiitos viestistäsi! Palaamme asiaan pian.'); return false;">
+                        <div class="form-group">
+                            <label for="name">Nimi</label>
+                            <input type="text" id="name" required placeholder="Etunimi Sukunimi">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Sähköposti</label>
+                            <input type="email" id="email" required placeholder="nimi@yritys.fi">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Puhelinnumero</label>
+                            <input type="tel" id="phone" placeholder="040 123 4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Viesti / Tarjouspyyntö</label>
+                            <textarea id="message" rows="4" required placeholder="Kerro lyhyesti yrityksestäsi ja tarpeistasi..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Lähetä viesti</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TiliPartner. Kaikki oikeudet pidätetään. Digitaalista kirjanpitoa Suomessa.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
