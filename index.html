@@ -189,6 +189,51 @@
             justify-content: center;
         }
 
+        /* Rating Box */
+        .rating-box {
+            margin-top: 40px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--bg-white);
+            padding: 24px 32px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .rating-stars {
+            color: #F59E0B;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-bottom: 10px;
+        }
+
+        .rating-score {
+            font-weight: 700;
+            color: var(--primary);
+            margin-left: 8px;
+            font-size: 1rem;
+        }
+
+        .rating-quote {
+            font-size: 0.98rem;
+            color: var(--text-dark);
+            font-style: italic;
+            max-width: 550px;
+            line-height: 1.5;
+        }
+
+        .rating-author {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: normal;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
         /* Features Section */
         .features {
             padding: 90px 0;
@@ -453,6 +498,20 @@
             <div class="hero-buttons">
                 <a href="#yhteystiedot" class="btn btn-primary">Ota yhteyttä</a>
                 <a href="#palvelut" class="btn btn-secondary">Tutustu palveluihin</a>
+            </div>
+
+            <!-- Tähtiluokitus ja asiakasarvostelu -->
+            <div class="rating-box">
+                <div class="rating-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span class="rating-score">5/5 tähteä</span>
+                </div>
+                <p class="rating-quote">”Yhteistyö TiliPartnerin kanssa on sujunut moitteettomasti. Digitaalisen palvelun ansiosta kirjanpito vie nyt vain murto-osan aiemmasta ajasta!”</p>
+                <span class="rating-author">— Tyytyväinen asiakas, Yrittäjä</span>
             </div>
         </div>
     </section>
