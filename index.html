@@ -147,7 +147,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 100px 0 80px 0;
+            padding: 90px 0 70px 0;
             background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 100%);
             text-align: center;
         }
@@ -187,51 +187,31 @@
             display: flex;
             gap: 16px;
             justify-content: center;
+            margin-bottom: 32px;
         }
 
-        /* Rating Box */
-        .rating-box {
-            margin-top: 40px;
+        .hero-rating {
             display: inline-flex;
-            flex-direction: column;
             align-items: center;
+            gap: 12px;
             background: var(--bg-white);
-            padding: 24px 32px;
-            border-radius: 12px;
+            padding: 8px 20px;
+            border-radius: 30px;
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-sm);
+            font-size: 0.9rem;
+            color: var(--text-dark);
         }
 
-        .rating-stars {
+        .hero-rating .stars {
             color: #F59E0B;
-            font-size: 1.15rem;
             display: flex;
-            align-items: center;
-            gap: 4px;
-            margin-bottom: 10px;
+            gap: 2px;
         }
 
-        .rating-score {
+        .hero-rating span.highlight {
             font-weight: 700;
             color: var(--primary);
-            margin-left: 8px;
-            font-size: 1rem;
-        }
-
-        .rating-quote {
-            font-size: 0.98rem;
-            color: var(--text-dark);
-            font-style: italic;
-            max-width: 550px;
-            line-height: 1.5;
-        }
-
-        .rating-author {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-style: normal;
-            font-weight: 600;
-            margin-top: 6px;
         }
 
         /* Features Section */
@@ -298,6 +278,26 @@
             color: var(--text-muted);
         }
 
+        /* Software Banner */
+        .software-banner {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .software-content h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .software-content p {
+            color: #94A3B8;
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
         /* Services Section */
         .services {
             padding: 90px 0;
@@ -336,307 +336,74 @@
             font-size: 0.95rem;
         }
 
-        /* Software Banner */
-        .software-banner {
-            background-color: var(--primary);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .software-content h2 {
-            font-size: 2rem;
-            margin-bottom: 16px;
-        }
-
-        .software-content p {
-            color: #94A3B8;
-            max-width: 650px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        /* Contact Section */
-        .contact {
+        /* Testimonials Section */
+        .testimonials {
             padding: 90px 0;
             background-color: var(--bg-white);
-            text-align: center;
         }
 
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
-        .contact-content h2 {
-            font-size: 2.25rem;
-            color: var(--primary);
-            margin-bottom: 16px;
-        }
-
-        .contact-content p.subtitle {
-            color: var(--text-muted);
-            margin-bottom: 48px;
-            font-size: 1.1rem;
-        }
-
-        .info-list {
+        .testimonial-card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 32px;
+            border-radius: 12px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 24px;
+            justify-content: space-between;
         }
 
-        .info-item {
+        .testimonial-stars {
+            color: #F59E0B;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 3px;
+        }
+
+        .testimonial-text {
+            color: var(--text-dark);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .testimonial-author {
             display: flex;
             align-items: center;
-            gap: 20px;
-            width: 100%;
-            max-width: 400px;
-            background-color: var(--bg-light);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            text-align: left;
-            transition: transform 0.2s ease;
+            gap: 12px;
         }
 
-        .info-item:hover {
-            transform: scale(1.02);
-        }
-
-        .info-item i {
-            width: 48px;
-            height: 48px;
+        .author-avatar {
+            width: 44px;
+            height: 44px;
             background-color: var(--accent-light);
             color: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
-            flex-shrink: 0;
+            font-weight: 700;
+            font-size: 0.95rem;
         }
 
-        .info-item-text h4 {
+        .author-info h4 {
+            font-size: 0.95rem;
             color: var(--primary);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
+            font-weight: 600;
         }
 
-        .info-item-text p {
-            color: var(--text-dark);
-            font-size: 1.1rem;
-            font-weight: 500;
+        .author-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--primary-light);
-            color: #94A3B8;
-            padding: 40px 0;
-            border-top: 1px solid #334155;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                justify-content: center;
-                gap: 12px;
-                height: auto;
-                padding: 16px 0;
-            }
-
-            .hero h1 {
-                font-size: 2.25rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navigaatio -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">
-                    <i class="fa-solid fa-calculator"></i>
-                    <span>Tili<span class="accent">Partner</span></span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="#miksi-me">Miksi me?</a></li>
-                    <li><a href="#palvelut">Palvelut</a></li>
-                    <li><a href="#yhteystiedot">Yhteystiedot</a></li>
-                    <li><a href="#yhteystiedot" class="btn btn-primary">Ota yhteyttä</a></li>
-                    <li>
-                        <a href="tel:+358407311994" class="phone-nav-link">
-                            <i class="fa-solid fa-phone"></i> +358 40 731 1994
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero-osio -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-badge">
-                <i class="fa-solid fa-check"></i> Yli 10 vuoden kokemus
-            </div>
-            <h1>Nykyaikaista ja täysin digitaalista kirjanpitoa Suomessa</h1>
-            <p>Yli 10 vuoden kokemuksella tarjoamme paperittomat ja vaivattomat taloushallinnon palvelut yrityksellesi.</p>
-            <div class="hero-buttons">
-                <a href="#yhteystiedot" class="btn btn-primary">Ota yhteyttä</a>
-                <a href="#palvelut" class="btn btn-secondary">Tutustu palveluihin</a>
-            </div>
-
-            <!-- Tähtiluokitus ja asiakasarvostelu -->
-            <div class="rating-box">
-                <div class="rating-stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <span class="rating-score">5/5 tähteä</span>
-                </div>
-                <p class="rating-quote">”Yhteistyö TiliPartnerin kanssa on sujunut moitteettomasti. Digitaalisen palvelun ansiosta kirjanpito vie nyt vain murto-osan aiemmasta ajasta!”</p>
-                <span class="rating-author">— Tyytyväinen asiakas, Yrittäjä</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Miksi valita meidät? -->
-    <section id="miksi-me" class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2>Miksi valita meidät?</h2>
-                <p>Nykyaikainen tilitoimisto, joka helpottaa yrityksesi arkea.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-leaf"></i>
-                    </div>
-                    <h3>100 % Digitaalinen ja paperiton</h3>
-                    <p>Säästä aikaa ja vaivaa. Kaikki kuitit, laskut ja raportit hoituvat sähköisesti missä ja milloin vain.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-award"></i>
-                    </div>
-                    <h3>Yli 10 vuoden kokemus</h3>
-                    <p>Luotettavaa ja ammattitaitoista palvelua, johon voit nojata vankasti yrityksesi arjessa ja kasvussa.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-laptop-code"></i>
-                    </div>
-                    <h3>Nykyaikaiset työkalut (Fennoa)</h3>
-                    <p>Käytössämme on helppokäyttöinen ja tehokas Fennoa-taloushallinto-ohjelmisto, joka tekee yhteistyöstä sujuvaa.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Fennoa Banneri -->
-    <section class="software-banner">
-        <div class="container">
-            <div class="software-content">
-                <h2>Tehokkuutta Fennoa-ohjelmistolla</h2>
-                <p>Käytämme alan moderneinta Fennoa-ohjelmistoa, jonka avulla automatisoimme rutiinit ja pidämme yrityksesi taloustiedot aina ajan tasalla.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Palvelumme -->
-    <section id="palvelut" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Palvelumme</h2>
-                <p>Kattavat taloushallinnon palvelut räätälöitynä yrityksesi tarpeisiin.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fa-solid fa-book-open"></i>
-                    <h3>Kirjanpito</h3>
-                    <p>Ajantasainen ja huolellinen kirjanpito kaikenkokoisille yrityksille asiantuntevasti toteutettuna.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-users"></i>
-                    <h3>Palkanlaskenta</h3>
-                    <p>Tarkka ja luotettava palkanlaskenta aina ajallaan ja viranomaisvaatimukset täyttäen.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-file-invoice-dollar"></i>
-                    <h3>Tilinpäätökset & Veroilmoitukset</h3>
-                    <p>Vuositilinpäätökset, veroilmoitukset ja viranomaisraportointi rautaisella ammattitaidolla.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <h3>Muut taloushallinnon palvelut</h3>
-                    <p>Laskutus, myynti- ja ostoreskontran hoito sekä asiantunteva neuvonta talouden kysymyksissä.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Yhteystiedot -->
-    <section id="yhteystiedot" class="contact">
-        <div class="container">
-            <div class="contact-content">
-                <h2>Ota yhteyttä</h2>
-                <p class="subtitle">Ota yhteyttä matalalla kynnyksellä – autamme mielellämme yrityksesi taloushallinnossa!</p>
-                
-                <div class="info-list">
-                    <a href="mailto:info@tilipartner.fi" style="text-decoration: none; display: block; width: 100%; max-width: 400px;">
-                        <div class="info-item">
-                            <i class="fa-solid fa-envelope"></i>
-                            <div class="info-item-text">
-                                <h4>Sähköposti</h4>
-                                <p>info@tilipartner.fi</p>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <a href="tel:+358407311994" style="text-decoration: none; display: block; width: 100%; max-width: 400px;">
-                        <div class="info-item">
-                            <i class="fa-solid fa-phone"></i>
-                            <div class="info-item-text">
-                                <h4>Puhelinnumero</h4>
-                                <p>+358 40 731 1994</p>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <div class="info-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div class="info-item-text">
-                            <h4>Osoite</h4>
-                            <p>Helsinki, Suomi</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 TiliPartner. Kaikki oikeudet pidätetään. Digitaalista kirjanpitoa Suomessa.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+        /* Contact Section */
+        .contact {
+            padding: 90px 0;
+            background-color: var
