@@ -147,7 +147,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 90px 0 70px 0;
+            padding: 100px 0 80px 0;
             background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 100%);
             text-align: center;
         }
@@ -187,31 +187,6 @@
             display: flex;
             gap: 16px;
             justify-content: center;
-            margin-bottom: 32px;
-        }
-
-        .hero-rating {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--bg-white);
-            padding: 8px 20px;
-            border-radius: 30px;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-            font-size: 0.9rem;
-            color: var(--text-dark);
-        }
-
-        .hero-rating .stars {
-            color: #F59E0B;
-            display: flex;
-            gap: 2px;
-        }
-
-        .hero-rating span.highlight {
-            font-weight: 700;
-            color: var(--primary);
         }
 
         /* Features Section */
@@ -336,77 +311,10 @@
             font-size: 0.95rem;
         }
 
-        /* Testimonials Section */
-        .testimonials {
-            padding: 90px 0;
-            background-color: var(--bg-white);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            background-color: var(--bg-light);
-            border: 1px solid var(--border-color);
-            padding: 32px;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .testimonial-stars {
-            color: #F59E0B;
-            font-size: 0.95rem;
-            margin-bottom: 16px;
-            display: flex;
-            gap: 3px;
-        }
-
-        .testimonial-text {
-            color: var(--text-dark);
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .author-avatar {
-            width: 44px;
-            height: 44px;
-            background-color: var(--accent-light);
-            color: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.95rem;
-        }
-
-        .author-info h4 {
-            font-size: 0.95rem;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .author-info p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
         /* Contact Section */
         .contact {
             padding: 90px 0;
-            background-color: var(--bg-light);
+            background-color: var(--bg-white);
             text-align: center;
         }
 
@@ -440,7 +348,7 @@
             gap: 20px;
             width: 100%;
             max-width: 400px;
-            background-color: var(--bg-white);
+            background-color: var(--bg-light);
             padding: 20px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
@@ -522,7 +430,6 @@
                 <ul class="nav-links">
                     <li><a href="#miksi-me">Miksi me?</a></li>
                     <li><a href="#palvelut">Palvelut</a></li>
-                    <li><a href="#asiakaskokemukset">Asiakkaat</a></li>
                     <li><a href="#yhteystiedot">Yhteystiedot</a></li>
                     <li><a href="#yhteystiedot" class="btn btn-primary">Ota yhteyttä</a></li>
                     <li>
@@ -546,18 +453,6 @@
             <div class="hero-buttons">
                 <a href="#yhteystiedot" class="btn btn-primary">Ota yhteyttä</a>
                 <a href="#palvelut" class="btn btn-secondary">Tutustu palveluihin</a>
-            </div>
-
-            <!-- Siro ja tyylikäs luokitusmerkki -->
-            <div class="hero-rating">
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <span><span class="highlight">4.9/5</span> tähteä asiakkailtamme Suomessa</span>
             </div>
         </div>
     </section>
@@ -632,77 +527,6 @@
                     <i class="fa-solid fa-chart-line"></i>
                     <h3>Muut taloushallinnon palvelut</h3>
                     <p>Laskutus, myynti- ja ostoreskontran hoito sekä asiantunteva neuvonta talouden kysymyksissä.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Asiakaskokemukset -->
-    <section id="asiakaskokemukset" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Mitä asiakkaamme sanovat</h2>
-                <p>Luotettava taloushallinnon kumppani eri toimialojen yrityksille.</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div>
-                        <div class="testimonial-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Kirjanpito hoituu nykyään täysin ilman paperisotaa. Fennoa-ohjelmiston ansiosta kuittien lähetys vie vain sekunteja, ja kirjanpitäjä pitää meidät aina kartalla."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MK</div>
-                        <div class="author-info">
-                            <h4>Matti K.</h4>
-                            <p>Toimitusjohtaja, Rakennuspalvelu Ketonen Oy</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div>
-                        <div class="testimonial-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Yli 10 vuoden kokemus näkyy asiantuntevuudessa. Saamme aina nopeasti selkeät vastaukset mieltä mietityttäviin verokysymyksiin ja palkanlaskentaan."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">LS</div>
-                        <div class="author-info">
-                            <h4>Laura S.</h4>
-                            <p>Yrittäjä, Digitoimisto Kipinä Oy</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div>
-                        <div class="testimonial-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Palkanlaskenta ja tilinpäätökset ovat aina virheettömiä ja täsmällisesti ajallaan. Erittäin helppo ja huoleton yhteistyökumppani arjessa."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JT</div>
-                        <div class="author-info">
-                            <h4>Juha T.</h4>
-                            <p>Osakas, Suomen Insinööripalvelut</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
