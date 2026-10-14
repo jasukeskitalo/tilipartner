@@ -392,12 +392,52 @@
 
         /* Footer */
         footer {
-            background-color: var(--primary-light);
+            background-color: #1E293B;
             color: #94A3B8;
-            padding: 40px 0;
+            padding: 60px 0 30px 0;
             border-top: 1px solid #334155;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            text-align: left;
+        }
+
+        .footer-col h3 {
+            color: #F8FAFC;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+        }
+
+        .footer-col p {
+            color: #94A3B8;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .footer-col a {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 24px;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.875rem;
+            color: #64748B;
         }
 
         /* Mobile Responsive */
@@ -416,6 +456,12 @@
 
             .hero-buttons {
                 flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                text-align: center;
             }
         }
     </style>
@@ -578,7 +624,22 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 TiliPartner. Kaikki oikeudet pidätetään. Digitaalista kirjanpitoa Suomessa.</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Yhteystiedot</h3>
+                    <p>Indrek N. Nurmberg</p>
+                    <p><a href="tel:+358407311994">+358 40 731 1994</a></p>
+                    <p><a href="mailto:info@tilipartner.fi">info@tilipartner.fi</a></p>
+                </div>
+                <div class="footer-col">
+                    <h3>Toimisto</h3>
+                    <p>Vilppulantie 10a lh. 1</p>
+                    <p>00700 Helsinki</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TiliPartner. Kaikki oikeudet pidätetään. Digitaalista kirjanpitoa Suomessa.</p>
+            </div>
         </div>
     </footer>
 
